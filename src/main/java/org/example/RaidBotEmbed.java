@@ -2,14 +2,12 @@ package org.example;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.awt.*;
 import java.util.*;
 import java.util.List;
 
-public class ItemEmbbed {
+public class RaidBotEmbed {
 
     /**
      * This method generates a list of classes based on the role provided.
@@ -21,7 +19,7 @@ public class ItemEmbbed {
      * @return A list of Classe objects corresponding to the role.
      * If the role is not found, it returns a list of all classes.
      */
-    private static List<Classe> classesList(String role) {
+    static List<Classe> classesList(String role) {
         // A map to store the role and corresponding classes
         Map<String, List<String>> roleClasses = new HashMap<>();
         roleClasses.put("tank", Arrays.asList("Paladin", "Guerrier", "Chevalier Noir", "Pistosabreur"));
@@ -57,7 +55,7 @@ public class ItemEmbbed {
      *
      * @return A MessageEmbed object for a raid creation.
      */
-    public static MessageEmbed TestEmbed() {
+    public static MessageEmbed RaidEmbed() {
         // Create a new EmbedBuilder object
         EmbedBuilder embed = new EmbedBuilder();
 
@@ -70,7 +68,7 @@ public class ItemEmbbed {
 
         // Define the roles and their display names
         String[] roles = {"tank", "healer", "melee", "distant", "magie"};
-        String[] roleNames = {"Tanks", "Soigneurs", "DPS Melée", "DPS Distant", "Mages"};
+        String[] roleNames = {"🛡️ Tanks", "💉 Soigneurs", "⚔️ DPS Melée", "🏹 DPS Distant", "🔮 Mages"};
 
         // Add a field for each role with the class names and their counts
         for (int i = 0; i < roles.length; i++) {
